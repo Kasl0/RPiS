@@ -24,7 +24,7 @@ precip[startsWith(names(precip), "M")]
 precip[precip == mean(precip)]
 
 # 8
-names(precip[median(precip) - 0.5 < precip & precip < median(precip) + 0.5])
+names(precip[median(precip) - 0.5 <= precip & precip <= median(precip) + 0.5])
 
 # 9
 precip[precip == min(precip)]
@@ -32,6 +32,8 @@ precip[precip == max(precip)]
 
 # 10
 length(precip[precip > mean(precip)])
+# lub
+sum(precip > mean(precip))
 
 # 11
 names(precip[precip > fivenum(precip)[4]])
